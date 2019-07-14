@@ -15,4 +15,4 @@ Parameters help:
 The first parameter is candel size, in this example `1d` equal to "1 Day" candlestick size
 Valid type for first parameter is: ['1m','3m','5m','15m','30m','1h','2h','4h','6h','8h','12h','1d','3d','1w','1M']
 
-The Second parameter is count of candlesticks do you want to save
+And second parameter for define sum of days before today that's you want to save data
