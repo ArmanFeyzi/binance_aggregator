@@ -157,40 +157,18 @@ else:
             # pprint.pprint(kline[0])
             symbol = {"ticker":ticker['ticker'],
                     "opentime": kline[0],
-                    "open": kline[1],
-                    "high": kline[2],
-                    "low": kline[3],
-                    "close": kline[4],
-                    "volume": kline[5],
+                    "open": float(kline[1]),
+                    "high": float(kline[2]),
+                    "low": float(kline[3]),
+                    "close": float(kline[4]),
+                    "volume": float(kline[5]),
                     "closetime": kline[6],
-                    "qouteassetvol": kline[7],
-                    "tkrbasevol": kline[8],
-                    "tkrqoutevol": kline[9],
-                    "ignore": kline[10],
+                    "qouteassetvol": float(kline[7]),
+                    "tkrbasevol": float(kline[8]),
+                    "tkrqoutevol": float(kline[9]),
+                    "ignore": float(kline[10]),
                     }
             # pprint.pprint(post)
             tickerCollection = "B"+ticker['ticker']
             posts = db["B"+ticker['ticker']]
             post_id = posts.insert_one(symbol).inserted_id
-
-# post = {"author": "Mike", "text": "My first blog post!", "tags": ["mongodb", "python", "pymongo"]}
-# posts = db.posts
-# post_id = posts.insert_one(post).inserted_id
-# post_id
-
-# pprint.pprint(posts.find_one())
-
-# for post in posts.find():
-#     pprint.pprint(post)
-
-# open a file with filename including symbol, interval and start and end converted to milliseconds
-# with open(
-#     "Binance_{}_{}_{}-{}.json".format(
-#         symbol,
-#         interval,
-#         date_to_milliseconds(start),
-#         date_to_milliseconds(end)
-#     ),
-#     'w'  # set file write mode
-# ) as f:
-#     f.write(json.dumps(klines))
